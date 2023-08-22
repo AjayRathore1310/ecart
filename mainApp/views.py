@@ -376,7 +376,7 @@ def placeOrderPage(Request):
 def paymentSuccessPage(Request,rppid,rpoid,rpsid,checkid):
     buyer = Buyer.objects.get(username=Request.user)
     if(checkid==88888):
-        check = Checkout.objects.filter(user=buyer)
+        check = Checkout.objects.filter(buyer=buyer)
         check=check[::-1]
         check=check[0]
     else:
